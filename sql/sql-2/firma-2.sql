@@ -42,3 +42,11 @@ INSERT INTO mitarbeiter(id, vorname, nachname, standort, gehalt, eintritt, abtei
     (9, 'Ida',   'Lang','Leipzig', 1100, '2026-08-01', NULL);
 
 
+CREATE TABLE projekt (
+    id              INTEGER PRIMARY KEY,
+    titel           VARCHAR(40) NOT NULL,
+    abteilung_id    INTEGER NOT NULL,
+    budget          INTEGER CHECK (budget >= 0),
+    status          VARCHAR(10) DEFAULT 'geplant',
+    FOREIGN KEY (abteilung_id) REFERENCES abteilung(id)
+);
