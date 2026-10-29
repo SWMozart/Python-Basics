@@ -82,6 +82,7 @@ SELECT COUNT(*) FROM projekt;
 -- Versuchen Sie, ein Projekt 'Geisterprojekt' für die Abteilung 99 einzutragen.
 -- Welche Fehlermeldung erscheint - und warum?
 -- Erwartet: FOREIGN KEY constraint failed
+PRAGMA foreign_keys = ON;
 INSERT INTO projekt (id, titel, abteilung_id, budget) 
 VALUES (4, 'Geisterprojekt', 99, 5000);
 
